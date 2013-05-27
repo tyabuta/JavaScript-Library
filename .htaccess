@@ -1,0 +1,18 @@
+
+# .git
+RedirectMatch 404 "(?:.*)/(?:\.git)(?:/.*)?$"
+
+# README
+RedirectMatch 404 "README.*"
+
+# 全ファイルのアクセス拒否
+<Files "*">
+    deny from all
+</Files>
+
+# .jsファイルのみ許可
+<Files ~ "\.js$">
+    allow from all
+</Files>
+
+
