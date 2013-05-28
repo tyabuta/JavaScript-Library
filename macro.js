@@ -20,12 +20,6 @@ function DateToStringYYYYMMDD(date) {
 }
 
 
-// ----------------------------------------------
-// expがfalseだとアラート表示する。
-// ----------------------------------------------
-function ASSERT(exp, msg) {
-    if (!exp) alert(msg);
-}
 
 
 
@@ -104,6 +98,12 @@ function DebugMessageFactory(bDebug){
     return function(){};
 }
 
+/*
+* expがfalseだとアラート表示する。
+*/
+function ASSERT(exp, msg) {
+    if (!exp) alert(msg);
+}
 
 // ----------------------------------------------
 // RGBの色コードを表す文字列を取得する。
