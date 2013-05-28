@@ -20,15 +20,12 @@ function DateToStringYYYYMMDD(date) {
 }
 
 
-
-
-
-// ----------------------------------------------
-// 文字列に引数のデータを書き込みます。
-// データを書き込む位置に{0}などと表記してください。
-// 戻り値: 展開した文字列を返す。
-// ----------------------------------------------
-var sprintf = function(fmt){
+/*
+* 文字列に引数のデータを書き込みます。
+* データを書き込む位置に{0}などと表記してください。
+* 戻り値: 展開した文字列を返す。
+*/
+function sprintf(fmt /* ... */){
     for (var i=1; i<arguments.length; i++){
         var reg = new RegExp("\\{" + (i-1) + "\\}", "g");
         fmt = fmt.replace(reg, arguments[i]);
