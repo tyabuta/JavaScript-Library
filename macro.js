@@ -7,27 +7,6 @@
 
 
 
-
-// ----------------------------------------------
-// コンソールに出力するdebugメッセージ用の関数を生成する。
-//
-// bDebug: コンソール出力する場合はtrue
-//         リリースする時にfalseを指定しておく事で、
-//         出力なしに切り替える事ができる。
-//
-// e.g.
-// var dmsg = dmsgFactory(true);
-//
-// 戻り値: デバック関数オブジェクト
-// ----------------------------------------------
-function dmsgFactory(bDebug){
-    if (bDebug && console)
-        return function(msg){ console.log(msg);}
-
-    return function(){};
-}
-
-
 // ----------------------------------------------
 // DateクラスをYYYY/MM/DDの書式文字列に変換する。
 // ----------------------------------------------
@@ -97,6 +76,32 @@ var getContext2d = function(canvas){
     // jQueryセレクタの場合、元のDOMを取得する。
     if (canvas.get) canvas = canvas.get(0);
     return canvas.getContext('2d');
+}
+
+
+
+
+/*-------------------------------------------------------------------
+* デバック関数
+-------------------------------------------------------------------*/
+
+/*
+* コンソールに出力するdebugメッセージ用の関数を生成する。
+* bDebug: コンソール出力する場合はtrue
+*         リリースする時にfalseを指定しておく事で、
+*         出力なしに切り替える事ができる。
+*
+* e.g.
+* var dmsg = DebugMessageFactory(true);  // for Debug
+* var dmsg = DebugMessageFactory(false); // for Release
+*
+* 戻り値: デバック関数オブジェクト
+*/
+function DebugMessageFactory(bDebug){
+    if (bDebug && console)
+        return function(msg){ console.log(msg);}
+
+    return function(){};
 }
 
 
