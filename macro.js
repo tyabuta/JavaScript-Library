@@ -142,7 +142,7 @@ function str2int(val){
 *
 * 戻り値: 16進数文字列を返す。
 */
-function rbg2str(color){
+function rgb2str(color){
     return base16(color.r) + base16(color.g) + base16(color.b);
 }
 
